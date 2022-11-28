@@ -10,8 +10,8 @@ namespace DtmClient\Middleware;
 
 use Closure;
 use DtmClient\Barrier;
-use Hyperf\Contract\ConfigInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Psr\Http\Message\ResponseInterface;
 
@@ -24,9 +24,9 @@ class DtmLaravelMiddleware
 
     protected ResponseInterface $response;
 
-    protected ConfigInterface $config;
+    protected Config $config;
 
-    public function __construct(Barrier $barrier, ResponseInterface $response, ConfigInterface $config)
+    public function __construct(Barrier $barrier, ResponseInterface $response, Config $config)
     {
         $this->barrier = $barrier;
         $this->response = $response;

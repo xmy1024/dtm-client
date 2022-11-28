@@ -20,15 +20,15 @@ use DtmClient\TransContext;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RequestOptions;
-use Hyperf\Contract\ConfigInterface;
+use Illuminate\Support\Facades\Config;
 
 class HttpApi implements ApiInterface
 {
     protected Client $client;
 
-    protected ConfigInterface $config;
+    protected Config $config;
 
-    public function __construct(Client $client, ConfigInterface $config)
+    public function __construct(Client $client, Config $config)
     {
         $this->client = $client;
         $this->config = $config;

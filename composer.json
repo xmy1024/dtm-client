@@ -24,6 +24,7 @@
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.4",
         "hyperf/context": "^2.2|^3.0",
+        "laravel/framework": "^8.0",
         "psr/http-server-middleware": "^1.0"
     },
     "require-dev": {
@@ -33,13 +34,6 @@
         "phpunit/phpunit": ">=7.0"
     },
     "suggest": {
-        "hyperf/config": "^2.2|^3.0",
-        "hyperf/db": "^2,2|^3.0",
-        "hyperf/redis": "^2,2|^3.0",
-        "hyperf/di": "^2.2|^3.0",
-        "hyperf/grpc-client": "^2.2|^3.0",
-        "hyperf/rpc-client": "^2.2|^3.0",
-        "hyperf/json-rpc": "^2.2|^3.0",
         "ext-openssl": "Required to use HTTPS.",
         "ext-pdo": "Required to use MySQL Client.",
         "ext-pdo_mysql": "Required to use MySQL Client.",
@@ -62,6 +56,11 @@
         },
         "hyperf": {
             "config": "DtmClient\\ConfigProvider"
+        },
+        "laravel": {
+            "providers": [
+                "DtmClient\\LaravelProvider"
+            ]
         }
     }
 }
